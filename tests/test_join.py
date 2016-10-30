@@ -69,3 +69,25 @@ def test_full_outer_join():
         {"lk1": "v3", "lk2": "lv2", "lk3": "lv3"},
         {"rk1": "v4", "rk2": "rv2", "rk3": "rv3"},
     ]
+
+def test_left_outer_join():
+
+    ds_left = Dataset(LEFT_ROWS2)
+    ds_right = Dataset(RIGHT_ROWS2)
+
+    assert list(join.left_outer_join(ds_left, 'lk1', ds_right, 'rk1')) == [
+        {"lk1": "v1", "lk2": "lv2", "lk3": "lv3", "rk1": "v1", "rk2": "rv2", "rk3": "rv3"},
+        {"lk1": "v2", "lk2": "lv2", "lk3": "lv3", "rk1": "v2", "rk2": "rv2", "rk3": "rv3"},
+        {"lk1": "v3", "lk2": "lv2", "lk3": "lv3"},
+    ]
+
+def test_right_outer_join():
+
+    ds_left = Dataset(LEFT_ROWS2)
+    ds_right = Dataset(RIGHT_ROWS2)
+
+    assert list(join.right_outer_join(ds_left, 'lk1', ds_right, 'rk1')) == [
+        {"lk1": "v1", "lk2": "lv2", "lk3": "lv3", "rk1": "v1", "rk2": "rv2", "rk3": "rv3"},
+        {"lk1": "v2", "lk2": "lv2", "lk3": "lv3", "rk1": "v2", "rk2": "rv2", "rk3": "rv3"},
+        {"rk1": "v4", "rk2": "rv2", "rk3": "rv3"},
+    ]
