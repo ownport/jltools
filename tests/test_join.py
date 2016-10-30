@@ -57,17 +57,6 @@ def test_inner_join_overwrite_values():
         {"lk1": "v1", "lk2": "lv3", "lk3": "lv4"}
     ]
 
-# LEFT_ROWS2 = [
-#     '{"lk1": "v1", "lk2": "lv2", "lk3": "lv3"}',
-#     '{"lk1": "v2", "lk2": "lv2", "lk3": "lv3"}',
-#     '{"lk1": "v3", "lk2": "lv2", "lk3": "lv3"}',
-# ]
-#
-# RIGHT_ROWS2 = [
-#     '{"rk1": "v4", "rk2": "rv2", "rk3": "rv3"}',
-#     '{"rk1": "v2", "rk2": "rv2", "rk3": "rv3"}',
-#     '{"rk1": "v1", "rk2": "rv2", "rk3": "rv3"}',
-# ]
 
 def test_full_outer_join():
 
